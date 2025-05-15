@@ -1,3 +1,7 @@
 customers:
   type: pandas.CSVDataset
   filepath: data/01_raw/olist_customers_dataset.csv
+
+orders:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_orders_dataset.csv
