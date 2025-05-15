@@ -5,3 +5,31 @@ customers:
 orders:
   type: pandas.CSVDataset
   filepath: data/01_raw/olist_orders_dataset.csv
+
+order_items:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_order_items_dataset.csv
+
+order_payments:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_order_payments_dataset.csv
+
+order_reviews:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_order_reviews_dataset.csv
+
+products:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_products_dataset.csv
+
+sellers:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_sellers_dataset.csv
+
+geolocation:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_geolocation_dataset.csv
+
+product_category_name_translation:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/product_category_name_translation.csv
