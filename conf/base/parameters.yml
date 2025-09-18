@@ -1,0 +1,10 @@
+modelo_sarimax:
+  freq: "D"
+  train_days: 30
+  test_days: 15
+  seasonal_period: 7
+  exog_prefix: "promedio"
+  min_obs: 10
+  max_diff: 2
+  adf_alpha: 0.05
+  top_n_plots: 3

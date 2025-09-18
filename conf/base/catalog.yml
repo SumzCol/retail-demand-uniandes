@@ -33,3 +33,43 @@ geolocation:
 product_category_name_translation:
   type: pandas.CSVDataset
   filepath: data/01_raw/product_category_name_translation.csv
+
+olist_consolidated_dataset:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/olist_consolidated_dataset.csv
+  load_args:
+    parse_dates: [order_purchase_timestamp]
+
+# Intermedios
+resultadofinal:
+  type: pandas.ParquetDataSet
+  filepath: data/02_intermediate/resultadofinal.parquet
+
+resultados_adf:
+  type: pandas.ParquetDataSet
+  filepath: data/02_intermediate/resultados_adf.parquet
+
+productos_no_estacionarios:
+  type: pandas.JSONDataSet
+  filepath: data/02_intermediate/productos_no_estacionarios.json
+
+series_diferenciadas:
+  type: pandas.ParquetDataSet
+  filepath: data/03_primary/series_diferenciadas.parquet
+
+d_map:
+  type: pandas.ParquetDataSet
+  filepath: data/03_primary/d_map.parquet
+
+exog_dict:
+  type: pickle.PickleDataSet
+  filepath: data/03_primary/exog_dict.pkl
+
+# Resultados
+resultados_modelos_sarimax:
+  type: pandas.ParquetDataSet
+  filepath: data/04_feature/resultados_modelos_sarimax.parquet
+
+resumen_top_modelos:
+  type: pandas.ParquetDataSet
+  filepath: data/05_model_input/resumen_top_modelos.parquet
