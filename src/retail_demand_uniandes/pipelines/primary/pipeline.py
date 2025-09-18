@@ -12,13 +12,13 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
             func=calculate_dias_venta,
             inputs="primary_dataset",
-            outputs="dias_venta",
+            outputs="dataset_con_dias_venta",
             name="calculate_dias_venta_node"
         ),
         node(
             func=filter_productos_mas_45,
-            inputs="dias_venta",
-            outputs="productos_mas_45_dias",
+            inputs="dataset_con_dias_venta",
+            outputs="productos_filtrados",
             name="filter_productos_mas_45_node"
-        )
+        ),
     ])

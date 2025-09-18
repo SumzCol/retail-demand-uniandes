@@ -62,3 +62,9 @@ def calculate_dias_venta(df: pd.DataFrame) -> pd.DataFrame:
 
 def filter_productos_mas_45(dias_venta: pd.DataFrame) -> pd.DataFrame:
     return dias_venta[dias_venta["dias_venta"] > 45]
+
+
+def ejemplo_node(data: dict) -> dict:
+    """Nodo de prueba que solo imprime y retorna lo mismo."""
+    print("🚀 Nodo de prueba ejecutado con éxito")
+    return data
