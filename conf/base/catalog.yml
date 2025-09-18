@@ -35,41 +35,42 @@ product_category_name_translation:
   filepath: data/01_raw/product_category_name_translation.csv
 
 olist_consolidated_dataset:
-  type: pandas.CSVDataSet
+  type: kedro_datasets.pandas.CSVDataset
   filepath: data/01_raw/olist_consolidated_dataset.csv
   load_args:
     parse_dates: [order_purchase_timestamp]
 
 # Intermedios
 resultadofinal:
-  type: pandas.ParquetDataSet
+  type: kedro_datasets.pandas.ParquetDataset
   filepath: data/02_intermediate/resultadofinal.parquet
 
 resultados_adf:
-  type: pandas.ParquetDataSet
+  type: kedro_datasets.pandas.ParquetDataset
   filepath: data/02_intermediate/resultados_adf.parquet
 
 productos_no_estacionarios:
-  type: pandas.JSONDataSet
+  type: kedro_datasets.json.JSONDataset
   filepath: data/02_intermediate/productos_no_estacionarios.json
 
+# Primary
 series_diferenciadas:
-  type: pandas.ParquetDataSet
+  type: kedro_datasets.pandas.ParquetDataset
   filepath: data/03_primary/series_diferenciadas.parquet
 
 d_map:
-  type: pandas.ParquetDataSet
+  type: kedro_datasets.pandas.ParquetDataset
   filepath: data/03_primary/d_map.parquet
 
 exog_dict:
-  type: pickle.PickleDataSet
+  type: kedro_datasets.pickle.PickleDataset
   filepath: data/03_primary/exog_dict.pkl
 
-# Resultados
+# Feature/Model
 resultados_modelos_sarimax:
-  type: pandas.ParquetDataSet
+  type: kedro_datasets.pandas.ParquetDataset
   filepath: data/04_feature/resultados_modelos_sarimax.parquet
 
 resumen_top_modelos:
-  type: pandas.ParquetDataSet
+  type: kedro_datasets.pandas.ParquetDataset
   filepath: data/05_model_input/resumen_top_modelos.parquet
