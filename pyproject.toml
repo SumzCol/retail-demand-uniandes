@@ -28,3 +28,6 @@ attr = "retail_demand_uniandes.__version__"
 [tool.setuptools.packages.find]
 where = [ "src",]
 namespaces = false
+
+[tool.kedro_telemetry]
+project_id = "0bdd901b4b204d258ffd3eb212dab536"

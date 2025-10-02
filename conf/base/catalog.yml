@@ -1,4 +1,76 @@
-# Here you can define all your datasets by using simple YAML syntax.
-#
-# Documentation for this file format can be found in "The Data Catalog"
-# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+customers:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_customers_dataset.csv
+
+orders:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_orders_dataset.csv
+
+order_items:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_order_items_dataset.csv
+
+order_payments:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_order_payments_dataset.csv
+
+order_reviews:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_order_reviews_dataset.csv
+
+products:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_products_dataset.csv
+
+sellers:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_sellers_dataset.csv
+
+geolocation:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/olist_geolocation_dataset.csv
+
+product_category_name_translation:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/product_category_name_translation.csv
+
+olist_consolidated_dataset:
+  type: kedro_datasets.pandas.CSVDataset
+  filepath: data/01_raw/olist_consolidated_dataset.csv
+  load_args:
+    parse_dates: [order_purchase_timestamp]
+
+# Intermedios
+resultadofinal:
+  type: kedro_datasets.pandas.ParquetDataset
+  filepath: data/02_intermediate/resultadofinal.parquet
+
+resultados_adf:
+  type: kedro_datasets.pandas.ParquetDataset
+  filepath: data/02_intermediate/resultados_adf.parquet
+
+productos_no_estacionarios:
+  type: kedro_datasets.json.JSONDataset
+  filepath: data/02_intermediate/productos_no_estacionarios.json
+
+# Primary
+series_diferenciadas:
+  type: kedro_datasets.pandas.ParquetDataset
+  filepath: data/03_primary/series_diferenciadas.parquet
+
+d_map:
+  type: kedro_datasets.pandas.ParquetDataset
+  filepath: data/03_primary/d_map.parquet
+
+exog_dict:
+  type: kedro_datasets.pickle.PickleDataset
+  filepath: data/03_primary/exog_dict.pkl
+
+# Feature/Model
+resultados_modelos_sarimax:
+  type: kedro_datasets.pandas.ParquetDataset
+  filepath: data/04_feature/resultados_modelos_sarimax.parquet
+
+resumen_top_modelos:
+  type: kedro_datasets.pandas.ParquetDataset
+  filepath: data/05_model_input/resumen_top_modelos.parquet

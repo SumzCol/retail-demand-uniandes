@@ -2,3 +2,5 @@ ipython>=8.10
 jupyterlab>=3.0
 kedro~=0.19.12
 notebook
+pandas
+kedro-datasets[pandas]
