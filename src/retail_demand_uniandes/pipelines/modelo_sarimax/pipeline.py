@@ -7,7 +7,6 @@ from .nodes import (
     train_sarimax_by_category,
     summarize_results,
 )
-
 def create_pipeline(**kwargs) -> Pipeline:
     return pipeline([
         node(
