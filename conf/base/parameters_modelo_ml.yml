@@ -3,3 +3,18 @@
 #
 # Documentation for this file format can be found in "Parameters"
 # Link: https://docs.kedro.org/en/0.19.12/configuration/parameters.html
+
+
+category_col: "product_category_name_english"
+date_col: "date"
+target_col: "units_sold"
+test_days: 15
+
+xgb_param_distributions:
+  n_estimators: [50, 100, 150]
+  max_depth: [3, 4, 5]
+  learning_rate: [0.01, 0.05, 0.1]
+  subsample: [0.7, 1.0]
+xgb_random_state: 2023
+
+
