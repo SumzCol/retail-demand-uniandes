@@ -74,3 +74,44 @@ resultados_modelos_sarimax:
 resumen_top_modelos:
   type: kedro_datasets.pandas.ParquetDataset
   filepath: data/05_model_input/resumen_top_modelos.parquet
+
+# XGBoost
+train_data:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/train_data.parquet
+
+test_data:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/test_data.parquet
+
+train_features:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/train_features.parquet
+
+test_features:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/test_features.parquet
+
+xgb_model:
+  type: pickle.PickleDataset
+  filepath: data/05_model_output/xgb_model.pkl
+
+predictions:
+  type: pickle.PickleDataset
+  filepath: data/06_predictions/predictions.pkl
+
+intermediate_table:
+  type: pandas.CSVDataSet
+  filepath: data/07_metrics/intermediate_table.csv
+
+train_concat:
+  type: pandas.CSVDataSet
+  filepath: data/07_metrics/train_concat.csv
+
+test_concat:
+  type: pandas.CSVDataSet
+  filepath: data/07_metrics/test_concat.csv
+
+metrics_by_category:
+  type: pandas.CSVDataSet
+  filepath: data/07_metrics/metrics_by_category.csv
