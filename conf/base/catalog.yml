@@ -101,17 +101,25 @@ predictions:
   filepath: data/06_predictions/predictions.pkl
 
 intermediate_table:
-  type: pandas.CSVDataset
+  type: pandas.CSVDataSet
   filepath: data/07_metrics/intermediate_table.csv
+  save_args:
+    index: False
 
 train_concat:
-  type: pandas.CSVDataset
+  type: pandas.CSVDataSet
   filepath: data/07_metrics/train_concat.csv
+  save_args:
+    index: False
 
 test_concat:
-  type: pandas.CSVDataset
+  type: pandas.CSVDataSet
   filepath: data/07_metrics/test_concat.csv
+  save_args:
+    index: False
 
 metrics_by_category:
-  type: pandas.CSVDataset
+  type: pandas.CSVDataSet
   filepath: data/07_metrics/metrics_by_category.csv
+  save_args:
+    index: False
