@@ -243,6 +243,8 @@ def train_sarimax_by_category(
                 "seasonal_order": str(seasonal_order),
                 "mae": mae,
                 "mse": mse
+                #
+                #
             })
         except Exception as e:
             results.append({
