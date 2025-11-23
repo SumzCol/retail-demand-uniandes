@@ -101,25 +101,25 @@ predictions:
   filepath: data/06_predictions/predictions.pkl
 
 intermediate_table:
-  type: kedro_datasets.pandas.ParquetDataset
+  type: pandas.CSVDataSet
   filepath: data/07_metrics/intermediate_table.csv
   save_args:
     index: False
 
 train_concat:
-  type: kedro_datasets.pandas.ParquetDataset
+  type: pandas.CSVDataSet
   filepath: data/07_metrics/train_concat.csv
   save_args:
     index: False
 
 test_concat:
-  type: kedro_datasets.pandas.ParquetDataset
+  type: pandas.CSVDataSet
   filepath: data/07_metrics/test_concat.csv
   save_args:
     index: False
 
 metrics_by_category:
-  type: kedro_datasets.pandas.ParquetDataset
+  type: pandas.CSVDataSet
   filepath: data/07_metrics/metrics_by_category.csv
   save_args:
     index: False
